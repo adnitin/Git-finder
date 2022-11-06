@@ -33,8 +33,7 @@ const App = () => {
     <Router>
       <ToastContainer />
       <UserContext.Provider value={{ user, setUser }}>
-        <headderIcon />
-        <Header />
+             <Header />
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/signin' element={<SignIn />} />

@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
 const Repos = ({ repos_url }) => {
     const [repos, setRepos] = useState([]);
+
+    
+
+  useEffect(() => {
     const fetchRepos = async () => {
         const { data } = await Axios.get(repos_url);
         setRepos(data);
-    };
-    useEffect(() => {
-        fetchRepos(); 
-    }, [repos_url]);
+      };
+    fetchRepos();
+  }, );
+
 
     return (
         <ListGroup>
@@ -21,7 +25,7 @@ const Repos = ({ repos_url }) => {
                     <div className="text-info">{repo.description}</div>
                 </ListGroupItem>
             ))}
-        </ListGroup> 
+        </ListGroup>
     );
 };
 

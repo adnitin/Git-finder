@@ -31,7 +31,7 @@ const Header = () => {
                     Git-Finder
                 </Link>
             </NavbarBrand>
-            <NavbarText className='text-dark display-5'>{context.user?.email ? context.user.email : ""}
+            <NavbarText className='text-dark c-5'>{context.user?.email ? context.user.email : ""}
             </NavbarText>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
